@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* GENERAL LAYOUT */
+html {
+  min-height: 100%; /* for the sticky footer trick */
+}
+html,
+body,
+#root {
+  display: flex; /* for the sticky footer trick */
+  flex-direction: column; /* for the sticky footer trick */
+  flex-grow: 1; /* for the sticky footer trick */
+}
+
+.App {
+  display: grid;
+  flex-grow: 1;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.App-header {
+  grid-area: header;
+}
+
+.App-sidebar {
+  justify-self: start;
+}
+
+.App-main {
+  padding: 1rem;
+}
+
+.main__title {
+  margin-top: 2.75rem;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.main__title em {
+  color: #ff0000;
+  font-style: normal;
+}
+
+.main__subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 1440px) {
+  .App-main {
+    padding: 1.5rem 5.625rem 5.375rem 6.8125rem;
+  }
+}
